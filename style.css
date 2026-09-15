@@ -196,7 +196,7 @@ h3 {
     font-size: 1.05rem;
     line-height: 1.75; /* 행간을 넓혀 가독성 향상 */
     color: #4a3525; /* 타이틀보다 부드러운 톤 */
-    max-width: 650px; /* 좌우 폭을 제한해 시선 집중 */
+    max-width: 700px; /* 좌우 폭을 제한해 시선 집중 */
     margin: 0 auto 50px auto;
 }
 
