@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    background-color: #d8c3a5;
+    color: #2f251f;
+    line-height: 1.5;
+}
+
+h1 {
+    font-family: "Sedan SC", serif;
+    text-align: center;
+    font-size: 3rem;
+    margin: 15px auto;
+}
+
+h2 {
+    text-align: center;
+    margin: auto;
+    font-size: 2rem;
+    font-family: "Sedan SC", serif;
+    color: #3b2a1a;
+}
+
+/* 옆에 탭 디자인 */
+.book-tabs {
+    position: absolute;
+    top: 70px;
+    right: -100px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: "Sedan SC", serif;
+    font-size: 1rem;
+}
+.book-tabs a /* a란: Anchor(닻)의 앞 글자를 딴 것으로, 하이퍼링크, 즉 이걸 누르면 다른곳으로 연결해주겠다는 의미 */ {
+    font-size: 13px;
+    display: block;
+    width: 95px;
+    padding: 14px 12px;
+    background: #9a6542;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: normal;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0.25);
+    /* 변화할 때 부드럽게 움직이도록 애니메이션 효과 부여 */
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.book-tabs a:hover {
+    background-color: #f7efe2;
+    color: #9a6542;
+    font-weight: bold;
+    cursor: pointer;
+    /* ② 왼쪽으로 5픽셀 툭 튀어나오게 만들기 (팝 효과) */
+    transform: translateX(-5px);
+    /* ③ 튀어나오면서 뒤에 생기는 더 크고 진한 그림자 효과 */
+    box-shadow: 2px 5px 9px rgba(0, 0, 0, 0.5);
+    -webkit-text-stroke: 0.4px #9a6542;
+}
+.book-tabs a.active {
+    background-color: #f7efe2 !important;
+    color: #9a6542 !important;
+    font-weight: bold;
+    /* 팝 효과: 오른쪽으로 5px 툭 튀어나와서 멈춰있게 설정 */
+    transform: translateX(-5px);
+    /* 튀어나온 상태에 맞게 그림자도 더 진하게 유지 */
+    box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.35);
+    -webkit-text-stroke: 0.4px #9a6542 !important;
+}
+
+/* Main book-frame area */
+.bookframe {
+    max-width: 750px;
+    min-height: 620px;
+    margin: 0 auto 30px auto;
+    padding: 30px;
+    background-color: #f7efe2;
+    border: 15px solid #6b3f25;
+    border-left: 15px solid #4a2c1a; /* 왼쪽 갈색 라인 음영 */
+    border-radius: 8px;
+    box-shadow: 18px 18px 30px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    position: relative;
+}
+.bookframe strong {
+    font-size: 25px;
+    font-family: "Sedan SC", serif;
+    color: #2b1a11;
+    font-weight: 700;
+}
+
+/* projects page */
+h3 {
+    font-family: "Lato", sans-serif;
+    font-size: 1.35rem;
+}
+.project-box /* 1. 프로젝트 상자들을 2개씩 나란히 정렬 (그리드 레이아웃) */ {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열 구조 고정 */
+    gap: 40px 30px;
+    padding: 20px auto;
+    align-items: start;
+}
+.project-card /* 3. 모든 프로젝트 카드 공통 스타일 (높이 맞춤 및 아늑한 연출) */ {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 내용물이 달라도 하단 높이를 일정하게 정렬 */
+    text-align: center;
+    background: white; /* 카드 내부에 깔끔한 흰색 배경 추가 */
+    margin: 25px 0 0 0;
+    padding: 10px 10px 20px 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    height: 100%; /* 카드 전체 높이 일치화 */
+    box-sizing: border-box;
+}
+.project-card img /*  4. 이미지 크기 조절 (가운데 정렬 및 세로 높이 고정) */ {
+    display: block;
+    width: 330px; /* 가로 크기 고정 */
+    height: 300px; /* 세로 높이를 300px로 똑같이 제한 */
+    object-fit: contain; /* 원본 비율이 깨지지 않고 상자에 예쁘게 채워지도록 설정 */
+    margin: 0 auto 10px auto; /* 정중앙 정렬 및 아래 글자와의 간격 */
+}
+.project-card p /*  6. 본문 설명 스타일 (가독성 향상) */ {
+    font-size: 0.95rem;
+    text-align: left;
+    color: dimgrey;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1; /* 텍스트 양이 달라도 레이아웃이 유지되도록 밀어주기 */
+}
+.button /*  7. 하단 프로젝트 바로가기 버튼 스타일 */ {
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: #3d312a;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+.project-card .button:hover {
+    background-color: #5a4b41;
+    cursor: pointer;
+}
+.project-card strong {
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+}
+
+/* About page */
+.dashed-line {
+    border: none;
+    border-top: 1px dashed #a08c7d; /* 부드러운 갈색 점선 */
+    width: 100%;
+    margin: 60px 0 20px 0; /* 위 50px, 아래 40px 여백 */
+}
+
+.page h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2b1a11;
+    margin-top: 35px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #2b1a11; /* 단정하고 확실한 구분선 */
+    text-transform: capitalize;
+}
+/* 첫 번째 타이틀의 상단 여백은 제거해서 라인 맞추기 */
+.profile:first-of-type {
+    margin-top: 0;
+}
+.page {
+    text-align: left;
+}
+.intro-text {
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.75; /* 행간을 넓혀 가독성 향상 */
+    color: #4a3525; /* 타이틀보다 부드러운 톤 */
+    max-width: 650px; /* 좌우 폭을 제한해 시선 집중 */
+    margin: 0 auto 50px auto;
+}
+
+.page p {
+    font-size: 0.95rem;
+    color: #2b1a11;
+    line-height: 1.6;
+}
+
+.page ul {
+    list-style-type: none; /* 기본 불릿 없애고 깔끔하게 처리 */
+    padding-left: 0;
+    margin-top: 8px;
+}
+.page ul li {
+    position: relative;
+    padding-left: 15px; /* 맞춤 불릿이 들어갈 공간 */
+    margin-bottom: 14px; /* 리스트 항목 간의 여백 */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #2b1a11;
+}
+
+/* 둥근 브라운 불릿 직접 구현 */
+.page ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    color: #2b1a11;
+    font-size: 1.1rem;
+}
+
+/* 학력 및 경력 부연 설명 (small 태그) */
+.page ul li small {
+    display: block;
+    font-size: 0.85rem;
+    color: #7a6555; /* 서브 텍스트는 약간 연한 갈색 */
+    margin-top: 4px;
+}
+
+
+/* 포트폴리오 'view more' 링크 */
+.view-more-btn {
+    display: inline-block;
+    border: 1px solid #7d6c60; /* 연한 브라운 테두리 선 */
+    background-color: white;
+    font-size: 0.8rem;
+    color: #7a6555;
+    border-radius: 4px;
+    padding: 3px 10px; /* 버튼 안쪽 여백 */
+    text-decoration: none;
+    margin-left: 8px;
+    transition: color 0.2s ease;
+}
+
+.view-more-btn:hover {
+    background-color: #5a4b41;
+    color: white;
+}
+
+/* footer section */
+footer {
+    text-align: center;
+    font-size: 14px;
+}

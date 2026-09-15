@@ -1,0 +1,211 @@
+.home {
+    margin: 0;
+
+    background-color: #ae99ab;
+    color: black;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+nav {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+    background-color: #ae99ab;
+    text-align: center;
+}
+li {
+    font-size: 1.5em;
+    display: inline;
+}
+
+.flex-container {
+    width: 50%;
+    margin: auto;
+    background-color: #ae99ab;
+    display: flex;
+    justify-content: center;
+}
+
+.flex-item a {
+    font-family: "Jim Nightshade", cursive;
+    font-size: 0.9em;
+    color: black;
+    padding: 20px 40px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px 25px;
+}
+
+h1 {
+    font-family: "Jim Nightshade", cursive;
+    font-size: 4em;
+    line-height: 0.9em;
+    margin: 0 0 15px;
+}
+.author {
+    text-align: center;
+    font-size: 30px;
+}
+.start-button {
+    font-size: 20px;
+    display: flex;
+    width: 50%;
+    margin: auto;
+    padding: 20px 15px;
+}
+
+.start-button a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: "Jim Nightshade", cursive;
+    font-size: 1.3em;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: white;
+}
+h2 {
+    font-family: "Jim Nightshade", cursive;
+    font-size: 2em;
+    margin-top: 20px;
+    text-align: left;
+}
+h3 {
+    font-family: "Jim Nightshade", cursive;
+    font-size: 1.5em;
+}
+
+.cover {
+    border: 2px solid silver;
+    width: 80%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: #7e5277;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.chapter {
+    padding-top: 30px;
+    background-color: #7e5277;
+    margin: 0;
+}
+
+.chapterbody {
+    border: 2px solid silver;
+    max-width: 45em;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: #ad97ab;
+    border-radius: 12px;
+}
+
+.chapterbody p {
+    font-family: "Lato", sans-serif;
+    text-align: left;
+    max-width: 50em;
+    line-height: 1.5em;
+}
+
+.chapterbody p:first-of-type::first-letter {
+    font-size: 2em;
+    margin-right: 3px;
+}
+
+.mouse-tale {
+    font-family: "Lato", sans-serif;
+    white-space: pre;
+    line-height: 1.3em;
+    font-size: 1em;
+
+    letter-spacing: 0.15em;
+    margin: 20px auto;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 25px auto 25px;
+    border-radius: 12px;
+}
+
+.float-left {
+    float: left;
+    margin-top: auto;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border-radius: 0;
+}
+
+.button {
+    display: flex;
+    font-family: "Jim Nightshade", cursive;
+    font-size: 1.3em;
+    margin: auto;
+    justify-content: space-between;
+    width: 50%;
+    padding: 20px 20px;
+    background-color: #ae99ab;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.button a {
+    text-decoration: none;
+    color: black;
+}
+.button a:hover {
+    color: white;
+}
+
+.resources {
+    background-color: #f1eff0;
+    padding: 10px 70px;
+    margin-top: 30px;
+}
+
+.resource-container {
+    font-family: "Lato", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.resource-container p {
+    font-size: 0.8em;
+}
+
+.resource-container div a {
+    color: black;
+    text-decoration: none;
+}
+
+.resource-container div a:hover {
+    color: #7e5277;
+}
+
+.jimfont {
+    font-size: 0.7em;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 20px;
+    margin-top: 40px;
+    font-size: 0.7em;
+}
