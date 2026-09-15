@@ -21,43 +21,55 @@ h2 {
     color: #3b2a1a;
 }
 
+
 /* 옆에 탭 디자인 */
+/* ==========================================
+   우측 내비게이션 탭 (원래 디자인 유지 + 둥둥 기능 추가)
+   ========================================== */
 .book-tabs {
-    position: absolute;
-    top: 70px;
-    right: -100px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
     font-family: "Sedan SC", serif;
     font-size: 1rem;
+    position: fixed; /* 스크롤을 내려도 화면에 고정 */
+    right: calc(50% - 510px); /* 원래 위치에 딱 붙도록 배치 조절 (겹치면 이 숫자를 늘리거나 줄이세요) */
+    top: 200px; /* 화면 상단으로부터의 고정 높이 */
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* 버튼 사이의 간격 */
+    z-index: 1000; /* 다른 요소보다 항상 위에 보이도록 설정 */
 }
-.book-tabs a /* a란: Anchor(닻)의 앞 글자를 딴 것으로, 하이퍼링크, 즉 이걸 누르면 다른곳으로 연결해주겠다는 의미 */ {
-    font-size: 13px;
+
+/* 원래 예뻤던 버튼 디자인 강제 고정 및 hover 효과 */
+.book-tabs a,
+.book-tabs a:visited,
+.book-tabs a:link {
     display: block;
+    background-color: #9a6542 !important; /* 원래의 밝은 베이지/화이트 배경 */
+    color: white !important; /* 원래의 다크 브라운 글자색 */
+    text-decoration: none !important; /* 밑줄 절대 금지 */
+    border-radius: 0 8px 8px 0 !important; /* 오른쪽만 둥글게 */
+    font-weight: normal !important;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0.25);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 13px;
     width: 95px;
     padding: 14px 12px;
     background: #9a6542;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-weight: normal;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 2px 3px 8px rgba(0, 0, 0.25);
-    /* 변화할 때 부드럽게 움직이도록 애니메이션 효과 부여 */
-    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
 .book-tabs a:hover {
-    background-color: #f7efe2;
-    color: #9a6542;
+    background-color: #f7efe2 !important;
+    color: #9a6542 !important;
     font-weight: bold;
     cursor: pointer;
-    /* ② 왼쪽으로 5픽셀 툭 튀어나오게 만들기 (팝 효과) */
+    /* 왼쪽으로 5픽셀 툭 튀어나오게 만들기 (팝) */
     transform: translateX(-5px);
-    /* ③ 튀어나오면서 뒤에 생기는 더 크고 진한 그림자 효과 */
+    /* 튀어나오면서 뒤에 생기는 더 크고 진한 그림자 효과 */
     box-shadow: 2px 5px 9px rgba(0, 0, 0, 0.5);
     -webkit-text-stroke: 0.4px #9a6542;
 }
+
 .book-tabs a.active {
     background-color: #f7efe2 !important;
     color: #9a6542 !important;
@@ -65,8 +77,13 @@ h2 {
     /* 팝 효과: 오른쪽으로 5px 툭 튀어나와서 멈춰있게 설정 */
     transform: translateX(-5px);
     /* 튀어나온 상태에 맞게 그림자도 더 진하게 유지 */
-    box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.35);
+    box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.5);
     -webkit-text-stroke: 0.4px #9a6542 !important;
+}
+
+/* 스크롤을 부드럽게 움직이게 하는 마법 코드 */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Main book-frame area */
@@ -220,7 +237,6 @@ h3 {
     color: #7a6555; /* 서브 텍스트는 약간 연한 갈색 */
     margin-top: 4px;
 }
-
 
 /* 포트폴리오 'view more' 링크 */
 .view-more-btn {

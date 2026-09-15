@@ -28,6 +28,64 @@
             });
         </script>
         <!-- 이메일 끝  -->
+        <!-- 탭 플로팅 -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const tabs = document.querySelectorAll(".book-tabs a");
+                const aboutSection = document.getElementById("about-section");
+
+                // 1. [클릭 이벤트] 탭을 클릭했을 때 부드럽게 스크롤 이동
+                tabs.forEach((tab) => {
+                    tab.addEventListener("click", (e) => {
+                        e.preventDefault(); // 기본 링크 기능 막기
+
+                        const tabText = tab.textContent.trim().toUpperCase();
+
+                        if (tabText === "PROJECTS") {
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                        } else if (tabText === "ABOUT ME" || tabText === "ABOUT") {
+                            if (aboutSection) {
+                                const yOffset = -40; // 스크롤 멈췄을 때 답답하지 않게 살짝 위로 여백 주기
+                                const y = aboutSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                                window.scrollTo({ top: y, behavior: "smooth" });
+                            }
+                        }
+                    });
+                });
+
+                // 2. [스크롤 이벤트] 마우스 스크롤 위치를 감지해서 자동으로 불 켜기
+                window.addEventListener("scroll", () => {
+                    if (!aboutSection) return;
+
+                    // 현재 스크롤 위치 측정
+                    const scrollPosition = window.scrollY || window.pageYOffset;
+
+                    // ABOUT ME 구역(점선)의 시작 위치 측정 (여백 100px 정도 여유를 둠)
+                    const aboutSectionTop = aboutSection.offsetTop - 100;
+
+                    tabs.forEach((tab) => {
+                        const tabText = tab.textContent.trim().toUpperCase();
+
+                        if (scrollPosition >= aboutSectionTop) {
+                            // 스크롤이 점선 아래로 내려왔을 때 -> ABOUT ME 활성화
+                            if (tabText === "ABOUT ME" || tabText === "ABOUT") {
+                                tab.classList.add("active");
+                            } else {
+                                tab.classList.remove("active");
+                            }
+                        } else {
+                            // 스크롤이 맨 위 영역에 있을 때 -> PROJECTS 활성화
+                            if (tabText === "PROJECTS") {
+                                tab.classList.add("active");
+                            } else {
+                                tab.classList.remove("active");
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+        <!-- 탭 플로팅 끝 -->
     </head>
 
     <body class="portfolio">
@@ -224,7 +282,7 @@
             </div>
 
             <!-- 점선 분리선  -->
-            <div class="dashed-line"></div>
+            <div class="dashed-line" id="about-section"></div>
             <h2>Explore My Story</h2>
             <!-- About me -->
             <div class="book-content">
