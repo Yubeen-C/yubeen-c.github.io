@@ -6,11 +6,18 @@ body {
     line-height: 1.5;
 }
 
+.undername {
+    font-family: "Sedan SC", serif;
+    font-size: 1.35rem;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
 h1 {
     font-family: "Sedan SC", serif;
     text-align: center;
     font-size: 3rem;
-    margin: 15px auto;
+    margin: 15px 0 0 0;
 }
 
 h2 {
@@ -20,7 +27,6 @@ h2 {
     font-family: "Sedan SC", serif;
     color: #3b2a1a;
 }
-
 
 /* 옆에 탭 디자인 */
 /* ==========================================
