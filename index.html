@@ -43,7 +43,7 @@
 
                         if (tabText === "PROJECTS") {
                             window.scrollTo({ top: 0, behavior: "smooth" });
-                        } else if (tabText === "ABOUT ME" || tabText === "ABOUT") {
+                        } else if (tabText.includes("ABOUT")) {
                             if (aboutSection) {
                                 const yOffset = -40; // 스크롤 멈췄을 때 답답하지 않게 살짝 위로 여백 주기
                                 const y = aboutSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -57,18 +57,16 @@
                 window.addEventListener("scroll", () => {
                     if (!aboutSection) return;
 
-                    // 현재 스크롤 위치 측정
-                    const scrollPosition = window.scrollY || window.pageYOffset;
-
-                    // ABOUT ME 구역(점선)의 시작 위치 측정 (여백 100px 정도 여유를 둠)
-                    const aboutSectionTop = aboutSection.offsetTop - 100;
-
+                    const aboutRect = aboutSection.getBoundingClientRect();
+                    const isAboutVisible = aboutRect.top <= (window.innerHeight /3);
+                    const isPageAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 100);
+                    
                     tabs.forEach((tab) => {
                         const tabText = tab.textContent.trim().toUpperCase();
 
-                        if (scrollPosition >= aboutSectionTop) {
+                        if (isAboutVisible || isPageAtBottom) {
                             // 스크롤이 점선 아래로 내려왔을 때 -> ABOUT ME 활성화
-                            if (tabText === "ABOUT ME" || tabText === "ABOUT") {
+                            if (tabText.includes("ABOUT")) {
                                 tab.classList.add("active");
                             } else {
                                 tab.classList.remove("active");
@@ -93,12 +91,11 @@
         <p class="undername">Digital Marketing &amp; Creative Strategy</p>
         <main class="bookframe">
             <div id="projects"></div>
-            <h2>Projects</h2>
             <nav class="book-tabs">
-                <a href="#projects">PROJECTS</a>
+                <a href="#projects" class="active">PROJECTS</a>
                 <a href="#aboutme">ABOUT ME</a>
             </nav>
-
+            <h2>Projects</h2>
             <!-- 여기서부터 실제로 보여지는 페이지 -->
             <div class="project-box">
                 <!-- 1 이디야 커피 -->
