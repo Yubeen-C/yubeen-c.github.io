@@ -62,7 +62,7 @@ h2 {
     transition: all 0.3s ease;
     cursor: pointer;
     font-size: 13px;
-    padding: 10px 16px;
+    padding: 10px 14px 10px 20px;
     background: #6b3f25;
 }
 
@@ -155,8 +155,9 @@ h3 {
     border-radius: 4px;
     font-size: 0.85rem;
     font-weight: 500;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.30);
 }
-.project-card .button:hover {
+.button:hover {
     background-color: #5a4b41;
     cursor: pointer;
 }
@@ -170,7 +171,7 @@ h3 {
     border: none;
     border-top: 1px dashed #a08c7d; /* 부드러운 갈색 점선 */
     width: 100%;
-    margin: 60px 0 20px 0; /* 위 50px, 아래 40px 여백 */
+    margin: 60px 0 20px 0; 
 }
 
 .page h4 {
@@ -196,7 +197,7 @@ h3 {
     line-height: 1.75; /* 행간을 넓혀 가독성 향상 */
     color: #4a3525; /* 타이틀보다 부드러운 톤 */
     max-width: 700px; /* 좌우 폭을 제한해 시선 집중 */
-    margin: 0 auto 50px auto;
+    margin: 0 auto 40px auto;
 }
 
 .page p {

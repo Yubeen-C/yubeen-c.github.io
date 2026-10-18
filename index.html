@@ -31,7 +31,7 @@
         <!-- 탭 플로팅 -->
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-                const tabs = document.querySelectorAll(".book-tabs a");
+                const tabs = document.querySelectorAll(".book-tabs a:not(:last-child)");
                 const aboutSection = document.getElementById("about-section");
 
                 // 1. [클릭 이벤트] 탭을 클릭했을 때 부드럽게 스크롤 이동
@@ -58,9 +58,10 @@
                     if (!aboutSection) return;
 
                     const aboutRect = aboutSection.getBoundingClientRect();
-                    const isAboutVisible = aboutRect.top <= (window.innerHeight /3);
-                    const isPageAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 100);
-                    
+                    const isAboutVisible = aboutRect.top <= window.innerHeight / 3;
+                    const isPageAtBottom =
+                        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+
                     tabs.forEach((tab) => {
                         const tabText = tab.textContent.trim().toUpperCase();
 
@@ -293,11 +294,15 @@
                         brands, communities, and cultures. I leverage consumer insights and creative strategy to drive
                         brand campaigns, multichannel marketing, and digital communications.
                     </p>
-                    <h4 class="profile">Profile</h4>
-                    <p>
-                        <span id="em-line"></span><br />
-                        Location: Bellevue, WA
+                    <p class="intro-text">
+                        <a class="button" href="yubeen_choi_resume.pdf" target="_blank">View Resume (PDF) &rarr;</a>
                     </p>
+
+                    <h4 class="profile">Profile</h4>
+                    <ul>
+                        <li><span id="em-line"></span><br /></li>
+                        <li>Location: Bellevue, WA</li>
+                    </ul>
 
                     <h4>Education</h4>
                     <ul>
@@ -314,11 +319,9 @@
                     <h4>Professional Experience</h4>
                     <ul>
                         <li>Volunteer - Jubilee REACH, Bellevue, WA (2026)</li>
-                        <li>Service Associate - Oneulwine, South Korea (2021-2022)</li>
-                        <li>Operations Associate - Ediya Coffee, South Korea (2022-2023)</li>
-
-                        <li>Exhibition Staff - Suwon Messe, South Korea (2023)</li>
                         <li>Freelance Model &amp; Assistant - MassMatch, South Korea (2023)</li>
+                        <li>Exhibition Staff - Suwon Messe, South Korea (2023)</li>
+                        <li>Operations Associate - Ediya Coffee, South Korea (2022-2023)</li>
                     </ul>
 
                     <h4>Hobby</h4>
