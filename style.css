@@ -55,7 +55,7 @@ h2 {
     text-decoration: none !important; /* 밑줄 절대 금지 */
     border-radius: 0 8px 8px 0 !important; /* 오른쪽만 둥글게 */
     font-weight: normal !important;
-    text-align: center;
+    text-align: left;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease;
     cursor: pointer;
