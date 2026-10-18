@@ -29,9 +29,7 @@ h2 {
 }
 
 /* 옆에 탭 디자인 */
-/* ==========================================
-   우측 내비게이션 탭 (원래 디자인 유지 + 둥둥 기능 추가)
-   ========================================== */
+/* 우측 내비게이션 탭 (원래 디자인 유지 + 둥둥 기능 추가)*/
 .book-tabs {
     font-family: "Sedan SC", serif;
     font-size: 1rem;
@@ -291,4 +289,10 @@ footer {
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.intro-button .button {
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
 }
