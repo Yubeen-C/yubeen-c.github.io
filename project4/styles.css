@@ -26,7 +26,7 @@ li {
 }
 
 .flex-container {
-    width: 50%;
+    width: 45em;
     margin: auto;
     background-color: #ae99ab;
     display: flex;
@@ -51,7 +51,7 @@ h1 {
     font-family: "Jim Nightshade", cursive;
     font-size: 4em;
     line-height: 0.9em;
-    margin: 0 0 15px;
+    margin: auto;
 }
 .author {
     text-align: center;
